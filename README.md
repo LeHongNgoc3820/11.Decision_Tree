@@ -108,6 +108,19 @@ $$Gain(T, X) = Entropy(T) - Entropy(T, X)$$
 + Những thay đổi nhỏ trong dữ liệu có thể dẫn đến cây hoàn toàn khác (**có thể dùng random forest để khắc phục**).
 + Nếu số lượng tính năng tương đối lớn àm số lượng mẫu lại nhỏ có thể dẫn đến không phù hợp dữ liệu.
 
+### Overfitting in Decision Tree algorithm
+Overfitting là một vấn đề thực tế trong khi xây dựng mô hình Cây quyết định. Vấn đề trang bị quá mức được xem xét khi thuật toán tiếp tục đi sâu hơn và sâu hơn để giảm lỗi tập huấn luyện nhưng lại dẫn đến lỗi tập kiểm tra tăng lên. Vì vậy, độ chính xác của dự đoán cho mô hình của chúng tôi đi xuống. Nó thường xảy ra khi chúng ta xây dựng nhiều nhánh do dữ liệu ngoại lệ và bất thường.
+
+Hai cách tiếp cận có thể được sử dụng để tránh trang bị quá mức như sau:
++ Pre-Pruning
++ Post-Pruning
+
+**Pre-Pruning**
++ Trong pre-pruning, chúng tôi dừng việc xây dựng cây sớm hơn một chút. Chúng tôi không muốn tách một nút nếu thước đo mức độ tốt của nó thấp hơn giá trị ngưỡng. Nhưng thật khó để chọn một điểm dừng thích hợp.
+
+**Post-Pruning**
++ Trong post-pruning, chúng tôi đi sâu hơn và sâu hơn trong cây để xây dựng một cây hoàn chỉnh. Nếu cây cho thấy vấn đề thừa thì việc cắt tỉa được thực hiện như một bước sau khi cắt tỉa. Chúng tôi sử dụng dữ liệu xác thực chéo để kiểm tra hiệu quả của việc cắt tỉa của chúng tôi. Sử dụng dữ liệu xác thực chéo, chúng tôi kiểm tra xem việc mở rộng một nút có dẫn đến cải thiện hay không. Nếu nó cho thấy một sự cải thiện, thì chúng ta có thể tiếp tục bằng cách mở rộng nút đó. Nhưng nếu nó cho thấy độ chính xác giảm thì không nên mở rộng. Vì vậy, nút nên được chuyển đổi thành nút lá.
+
 ## 5. Xây dựng Decision Tree sử dụng sklearn
 ### Xây dựng cây quyết định sử dụng sklearn
 + `sklearn.tree.DecisionTreeClassifier`: Đây là một mô hình phân loại dựa trên cây quyết định rất mạnh mẽ giúp chúng ta có thể thực hiện một tree model nhanh hơn, hiệu quả hơn và gọn gàng hơn chỉ vài dòng lệnh.
