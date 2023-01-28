@@ -1,4 +1,4 @@
-# Decision Tree
+# Decision Tree Algorithm
 [**Chi tiết bài viết**](https://github.com/LeHongNgoc3820/11.Decision_Tree/blob/main/Decision%20Tree%20Classifier.ipynb)
 
 **Dưới đây là nội dung tóm tắt**
