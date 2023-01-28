@@ -1,5 +1,7 @@
 # Decision Tree
+[**Chi tiết bài viết**](...)
 
+**Dưới đây là nội dung tóm tắt**
 ### Nội dung:
 1. Giới thiệu
 2. Các ứng dụng
